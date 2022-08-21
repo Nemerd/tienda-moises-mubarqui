@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+svg{
+    height: 1rem;
+}
+
+button{
+    border: 0;
+    background: none;
+}
