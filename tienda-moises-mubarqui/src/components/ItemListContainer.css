@@ -2,6 +2,6 @@
     display: flex;
     background-color: #BBCBCB;
     height: 95vh;
-    align-items: center;
+    align-content: center;
     justify-content: center;
 }
