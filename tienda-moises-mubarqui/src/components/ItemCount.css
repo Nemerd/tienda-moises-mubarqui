@@ -1,0 +1,18 @@
+.ItemCount{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-content: center;
+    background-color: #634B66;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.ItemCount button{
+    background-color: #9590A8;
+    color: white;
+}
+
+.ItemCount p{
+    margin: 0rem 1rem 0rem 1rem;
+}
