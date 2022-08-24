@@ -4,20 +4,20 @@ import './ItemCount.css';
 function ItemCount({stock}) {
     const [quantity, setQuantity] = useState(0);
 
-    const add = () => {
+    const onAdd = () => {
         if (quantity < stock) {
             setQuantity(quantity + 1);
         }}
-    const rest = () =>{
+    const onSubstract = () =>{
         if (quantity > 0) {
             setQuantity(quantity - 1);
         }}
 
     return(
         <div className="ItemCount">
-            <button onClick={add}>Agregar</button>
+            <button onClick={onAdd}>Agregar</button>
             <p>{quantity}</p>
-            <button onClick={rest}>Quitar</button>
+            <button onClick={onSubstract}>Quitar</button>
         </div>
     )
 }
