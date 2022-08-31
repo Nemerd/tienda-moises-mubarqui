@@ -1,0 +1,19 @@
+.Item{
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+    align-items: center;
+    border-width: 3px;
+    border-style: solid;
+    margin: 2rem;
+}
+
+.Item p{
+    margin: 0;
+}
+
+.Item button{
+    background-color: #9590A8;
+    width: 5rem;
+    justify-self: center;
+}
