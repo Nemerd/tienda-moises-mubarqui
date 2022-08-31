@@ -6,6 +6,7 @@
     border-width: 3px;
     border-style: solid;
     margin: 2rem;
+    border-radius: 15px;
 }
 
 .Item p{
