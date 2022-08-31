@@ -1,9 +1,9 @@
-button{
+.CartWidget button{
     display: flex;
     background-color: #BBCBCB;
     flex-flow: row;
 }
 
-button p{
+.CartWidget button p{
     margin: 0rem 1rem 0rem 1rem;
 }
