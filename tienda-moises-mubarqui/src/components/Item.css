@@ -5,8 +5,10 @@
     align-items: center;
     border-width: 3px;
     border-style: solid;
-    margin: 2rem;
     border-radius: 15px;
+    width: 25vw;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .Item p{
