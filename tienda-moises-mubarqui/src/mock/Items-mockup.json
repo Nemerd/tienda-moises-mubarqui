@@ -1,0 +1,7 @@
+[
+    { "id": 1, "nombre": "Fast & Furious 7", "precio": 700, "stock": 3},
+    { "id": 2, "nombre": "Los tipos malos", "precio": 700, "stock": 7},
+    { "id": 3, "nombre": "Minions: El origen de Gru", "precio": 750, "stock": 6},
+    { "id": 4, "nombre": "DC Liga de Supermascotas", "precio": 750, "stock": 1},
+    { "id": 5, "nombre": "Venom 3D", "precio": 1000, "stock": 5}
+]
