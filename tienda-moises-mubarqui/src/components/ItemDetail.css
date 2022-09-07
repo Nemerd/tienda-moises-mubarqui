@@ -1,0 +1,37 @@
+.ItemDetail{
+    display: grid;
+    grid-template-areas: "title title"
+                         "picture description"
+                         "picture price";
+    grid-template-columns: 50vw 50vw;
+    background-color: #9590a8;
+    height: 100%;
+}
+
+.picture{
+    grid-area: picture;
+    justify-self: center;
+    max-width: 50vw;
+    max-height: 80vh;
+    border: 1em dashed #18020c;
+}
+.title{
+    grid-area: title;
+}
+.description{
+    grid-area: description;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #bbcbcb;
+    border-radius: 2em;
+}
+.price{
+    grid-area: price;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5ffde;
+    border-radius: 2em;
+}
