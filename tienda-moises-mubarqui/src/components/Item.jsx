@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Item.css';
 
 function Item({id, nombre, precio, stock}) {
@@ -6,8 +7,8 @@ function Item({id, nombre, precio, stock}) {
             <p>{id}</p>
             <p>{nombre}</p>
             <p>${precio}</p>
-            <p>{stock}</p>
-            <button>Más info</button>
+            <p>Entradas disponibles: {stock}</p>
+            <Link to={"/item/" + id}>Más info</Link>
         </div>
     )
 }

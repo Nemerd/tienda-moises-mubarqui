@@ -1,19 +1,20 @@
-import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "./ItemDetail";
 import "./ItemDetailContainer.css";
 import mock from "../mock/Items-mockup.json"
 
-function ItemDetailContainer({id}) {
-
-    const [item, setItem] = useState({});
+function ItemDetailContainer() {
+    const { id } = useParams();
+    const [ item, setItem ] = useState({});
 
     useEffect(() => {
-        setItem(mock.find( item => item.id === id))
-    }, [id]);
+        setItem( mock.find( item => item.id === id ));
+    }, [ id ]);
 
     return (
         <div className="ItemDetailContainer">
-            <ItemDetail peli={item}/>
+            <ItemDetail peli={ item }/>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 .Item{
     display: flex;
     flex-flow: column;
-    justify-items: center;
+    justify-content: space-between;
     align-items: center;
     border-width: 3px;
     border-style: solid;
