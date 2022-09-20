@@ -5,7 +5,6 @@ import './CartWidget.css';
 
 function CartWidget({stock}) {
     const { totalQuantity } = useContext(CartContext);
-    console.log(totalQuantity)
     return(
         <div className="CartWidget">
             <Link to={"/cart"}>Finalizar compra</Link>

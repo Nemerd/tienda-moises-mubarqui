@@ -1,29 +1,34 @@
-import React, { useState, createContext } from "react";
+import React, { useEffect, useState, createContext } from "react";
 
 const CartContext = createContext();
 
 function CartContextProvider(props) {
     
     const [cart, setCart] = useState([]);
-
+   
     /* 
      * [{id:0,
      *  quantity: 0}]
      */
     
+    useEffect(() => {
+        updateQtty()
+    }, [cart]);
+    
     function checkDuplicates(params) {
         // Si el elemento que se pasó existe en el carrito, agregá la nueva cantidad.
         let exists = cart.find( (item) => item.id === params.id )
         if (exists){
-            console.log("2")
-            const duplicateElementIndex = cart.findIndex(cart.filter((i) => i.id === params.id));
-            const newCart = cart[duplicateElementIndex].quantity + params.quantity;
-            setCart(newCart);
-            updateQtty()
+            console.log("Duplicado")
+
+            const duplicateElementIndex = cart.findIndex((i) => i.id === params.id);
+            const newCart = [...cart]
+            cart[duplicateElementIndex].quantity += params.quantity;
+            console.log(cart)
+            setCart([...cart]);
         } else {
-            console.log("1")
-            setCart(cart.push(params));
-            updateQtty()
+            console.log("Primero")
+            setCart([...cart, params]);
         }
     }
 
@@ -37,11 +42,7 @@ function CartContextProvider(props) {
 
     function addToCart(params) {
         checkDuplicates(params);
-        console.log("Llega: " + params)
-        console.log(params)
-        console.log("Hay: " + cart)
-        console.log(cart)
-    }
+        }
 
     const [totalQuantity, setTotalQuantity] = useState(0);
 
