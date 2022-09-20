@@ -2,7 +2,8 @@
     display: grid;
     grid-template-areas: "title title"
                          "picture description"
-                         "picture price";
+                         "picture price"
+                         "picture count";
     grid-template-columns: 50vw 50vw;
     background-color: #9590a8;
     height: 100%;

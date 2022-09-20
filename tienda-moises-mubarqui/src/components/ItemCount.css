@@ -1,8 +1,10 @@
 .ItemCount{
-    display: flex;
-    flex-flow: row;
+    grid-area: count;
+    display: grid;
+    /* flex-flow: row; */
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    align-content: center;
+    align-items: center;
     background-color: #634B66;
     margin: 1rem;
     padding: 1rem;
@@ -15,4 +17,8 @@
 
 .ItemCount p{
     margin: 0rem 1rem 0rem 1rem;
+}
+
+.sendToCart{
+    grid-column: 1 / 4;
 }

@@ -1,11 +1,24 @@
-.CartWidget button{
+.CartWidget{
     display: flex;
     background-color: #BBCBCB;
     flex-flow: row;
-    height: 100%;
+    align-items: center;
+}
+
+.CartWidget button{
+    display: flex;
+    flex-flow: row;
     align-items: center;
 }
 
 .CartWidget button p{
     margin: 0rem 1rem 0rem 1rem;
+}
+
+.CartWidget a{
+    margin: auto 1rem;
+    overflow: auto;
+}
+.CartWidget a:visited{
+    color: #0000ee;
 }
