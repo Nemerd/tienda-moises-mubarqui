@@ -1,15 +1,20 @@
 import "./ItemDetail.css";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import ItemCount from "./ItemCount";
+import { CartContext } from "../context/CartContext";
 
 function ItemDetail({peli}) {
 
-    const {nombre, precio, descripcion, imagen, stock} = peli
+    const {id, nombre, precio, descripcion, imagen, stock} = peli
+    const {addToCart} = useContext(CartContext);
     const [ocultar, setOcultar] = useState(false);
+    
+    useEffect(() => {
+    }, []);
 
     const onAddToCart = (param) => {
-        console.log(param)
-        setOcultar(true)
+        addToCart({id: id, quantity: param});
+        setOcultar(true);
     }
 
     return (
