@@ -12,6 +12,12 @@ function CartContextProvider(props) {
      */
     
     useEffect(() => {
+        function updateQtty(){
+            let tempQtty = 0;
+            cart.forEach( (i) => {tempQtty = tempQtty + i.quantity} )
+            setTotalQuantity(tempQtty)
+        }
+
         updateQtty()
     }, [cart]);
     
@@ -22,7 +28,6 @@ function CartContextProvider(props) {
             console.log("Duplicado")
 
             const duplicateElementIndex = cart.findIndex((i) => i.id === params.id);
-            const newCart = [...cart]
             cart[duplicateElementIndex].quantity += params.quantity;
             console.log(cart)
             setCart([...cart]);
@@ -30,12 +35,6 @@ function CartContextProvider(props) {
             console.log("Primero")
             setCart([...cart, params]);
         }
-    }
-
-    function updateQtty(){
-        let tempQtty = 0;
-        cart.forEach( (i) => {tempQtty = tempQtty + i.quantity} )
-        setTotalQuantity(tempQtty)
     }
 
     //-------------Agregar lo que haya debajo de esta línea---------------------
@@ -52,7 +51,8 @@ function CartContextProvider(props) {
             value={{
                     /* Todo lo que creé en CartContextProvider */
                     addToCart,
-                    totalQuantity
+                    totalQuantity,
+                    cart
                     }}>
                 {props.children}
             </CartContext.Provider>

@@ -1,3 +1,36 @@
 .Cart{
-    
+    background-color: #BBCBCB;
+    height: 95vh;
+    align-content: flex-start;
+    overflow: scroll;
+}
+
+.cards{
+    height: 85vh;
+    overflow: scroll;
+}
+
+.card{
+    margin: 1em 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 1em;
+    border: 0.25em dashed black;
+}
+
+.card:first-child{
+    margin-top: 0;
+}
+
+.card img{
+    max-width: auto;
+    max-height: 10vh;
+}
+
+.BuyTickets{
+    height: 10vh;
+    width: auto;
+    color: antiquewhite;
+    background: radial-gradient(#18020C, 65%, #634B66);
 }
