@@ -8,9 +8,6 @@ function ItemDetail({peli}) {
     const {id, nombre, precio, descripcion, imagen, stock} = peli
     const {addToCart} = useContext(CartContext);
     const [ocultar, setOcultar] = useState(false);
-    
-    useEffect(() => {
-    }, []);
 
     const onAddToCart = (param) => {
         addToCart({id: id, quantity: param});
