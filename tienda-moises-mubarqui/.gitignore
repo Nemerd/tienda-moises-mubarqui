@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+tienda
+tienda-moises-mubarqui.bkp

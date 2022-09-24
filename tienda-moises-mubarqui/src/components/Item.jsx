@@ -3,7 +3,7 @@ import './Item.css';
 
 function Item({id, nombre, precio, stock}) {
     return (
-        <div className='Item'>
+        <div className='Item' key={id}>
             <p>{id}</p>
             <p>{nombre}</p>
             <p>${precio}</p>

@@ -3,14 +3,14 @@ import { useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { CartContext } from "../context/CartContext";
 
-function ItemDetail({peli}) {
+function ItemDetail({peli, id}) {
 
-    const {id, nombre, precio, descripcion, imagen, stock} = peli
+    const {nombre, precio, descripcion, imagen, stock} = peli
     const {addToCart} = useContext(CartContext);
     const [ocultar, setOcultar] = useState(false);
 
     const onAddToCart = (param) => {
-        addToCart({id: id, quantity: param});
+        addToCart({id: id, quantity: param, nombre: nombre, precio: precio, imagen: imagen });
         setOcultar(true);
     }
 

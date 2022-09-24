@@ -22,11 +22,13 @@
 .description{
     grid-area: description;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 10px;
     background-color: #bbcbcb;
     border-radius: 2em;
+    max-height: 70vh;
+    overflow: scroll;
 }
 .price{
     grid-area: price;

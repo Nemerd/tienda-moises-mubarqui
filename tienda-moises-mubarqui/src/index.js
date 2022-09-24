@@ -4,28 +4,6 @@ import './index.css';
 import App from './App';
 import { CartContextProvider } from "./context/CartContext.jsx";
 import reportWebVitals from './reportWebVitals';
-import "dotenv/config"
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: "tienda-moises-mubarqui.firebaseapp.com",
-  projectId: "tienda-moises-mubarqui",
-  storageBucket: "tienda-moises-mubarqui.appspot.com",
-  messagingSenderId: "527645983730",
-  appId: "1:527645983730:web:0e6efb04c6820e6c84e16b",
-  measurementId: "G-60BLY67ZK0"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

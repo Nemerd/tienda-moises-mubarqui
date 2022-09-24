@@ -7,8 +7,13 @@ function CartContextProvider(props) {
     const [cart, setCart] = useState([]);
    
     /* 
-     * [{id:0,
-     *  quantity: 0}]
+     * [{
+     *  id:0,
+     *  quantity: 0
+     *  nombre: "str"
+     *  precio: 0
+     *  imagen: "str"
+     * }]
      */
     
     useEffect(() => {
@@ -22,26 +27,26 @@ function CartContextProvider(props) {
     }, [cart]);
     
     function checkDuplicates(params) {
+        console.log("Llega el parámetro: ")
+        console.log(params)
         // Si el elemento que se pasó existe en el carrito, agregá la nueva cantidad.
         let exists = cart.find( (item) => item.id === params.id )
         if (exists){
             console.log("Duplicado")
-
             const duplicateElementIndex = cart.findIndex((i) => i.id === params.id);
             cart[duplicateElementIndex].quantity += params.quantity;
-            console.log(cart)
             setCart([...cart]);
         } else {
             console.log("Primero")
             setCart([...cart, params]);
         }
     }
-
+    
     //-------------Agregar lo que haya debajo de esta línea---------------------
-
+    
     function addToCart(params) {
         checkDuplicates(params);
-        }
+    }
 
     const [totalQuantity, setTotalQuantity] = useState(0);
 

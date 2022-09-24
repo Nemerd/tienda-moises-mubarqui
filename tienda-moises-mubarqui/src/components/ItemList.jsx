@@ -1,15 +1,18 @@
 import './ItemList.css';
 import Item from "./Item";
 
-function ItemList({items}) {
+function ItemList({items, ids}) {
+
     return (
         <div className='ItemList'>
-            {items.map(i => <Item id={i.id} 
-                                    nombre={i.nombre}
-                                    precio={i.precio}
-                                    stock={i.stock} /> )}
-        </div>
-    )
+            {items.map(i => {
+                const index = items.indexOf(i);
+                return <Item id={ids[index]}
+                      nombre={i.nombre}
+                      precio={i.precio}
+                      stock={i.stock} />}
+                      )}
+        </div>)
 }
 
 export default ItemList;
