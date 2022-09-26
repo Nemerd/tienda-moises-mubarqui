@@ -1,7 +1,8 @@
 .Cart{
+    display: flex;
+    flex-flow: column;
     background-color: #BBCBCB;
     height: 95vh;
-    align-content: flex-start;
     overflow: scroll;
 }
 
@@ -29,8 +30,13 @@
 }
 
 .BuyTickets{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
     height: 10vh;
-    width: auto;
+    width: 10em;
+    padding: 0 0.5em;
     color: antiquewhite;
     background: radial-gradient(#18020C, 65%, #634B66);
 }

@@ -1,6 +1,7 @@
 import "./Cart.css";
 import { useContext } from 'react';
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 function Cart(params) {
     const {cart, removeFromCart} = useContext(CartContext)
@@ -18,7 +19,7 @@ function Cart(params) {
                          }
                 )}
             </div>
-            <button className="BuyTickets">Comprar tickets</button>
+            <Link to="/checkout" className="BuyTickets">Siguiente</Link>
         </div>
     )
 }
