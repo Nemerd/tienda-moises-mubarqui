@@ -34,3 +34,7 @@
     color: antiquewhite;
     background: radial-gradient(#18020C, 65%, #634B66);
 }
+
+.delete{
+    background-color: red;
+}

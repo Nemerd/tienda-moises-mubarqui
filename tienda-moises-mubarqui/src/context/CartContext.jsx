@@ -48,6 +48,13 @@ function CartContextProvider(props) {
         checkDuplicates(params);
     }
 
+    function removeFromCart(params) {
+        const index = cart.findIndex((i) => i.id === params);
+        const tempCart = [...cart]
+        tempCart.splice(index, 1)
+        setCart([...tempCart])
+    }
+
     const [totalQuantity, setTotalQuantity] = useState(0);
 
     return (
@@ -56,6 +63,7 @@ function CartContextProvider(props) {
             value={{
                     /* Todo lo que creé en CartContextProvider */
                     addToCart,
+                    removeFromCart,
                     totalQuantity,
                     cart
                     }}>
