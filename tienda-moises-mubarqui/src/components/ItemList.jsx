@@ -10,7 +10,8 @@ function ItemList({items, ids}) {
                 return <Item id={ids[index]}
                       nombre={i.nombre}
                       precio={i.precio}
-                      stock={i.stock} />}
+                      stock={i.stock}
+                      key={index} />}
                       )}
         </div>)
 }

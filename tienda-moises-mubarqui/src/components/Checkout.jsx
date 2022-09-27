@@ -1,19 +1,69 @@
 import './Checkout.css';
+import { useState, useContext, useEffect } from "react";
+import { CartContext } from '../context/CartContext';
+import { setOrder } from "../firebase/firebase";
 
-function Checkout() {
-    function onSubmit(evt){
+function Checkout(props) {
+
+    const { cart, totalCash } = useContext(CartContext);
+    const [orderNo, setOrderNo] = useState();
+    const [parrafo, setParrafo] = useState();
+    const [form, setForm] = useState({nombre:   "",
+                                      email:    "",
+                                      telefono: ""});
+
+    async function onSubmit(evt){
         evt.preventDefault();
+        const dia = new Date()
+        const data = { form, cart, dia, totalCash }
+        setOrderNo( await setOrder(data))
     }
 
     function onChange(evt){
-        const { name, value } = evt.taarget
+        const { name, value } = evt.target
+        const tmpForm = {...form,
+                         [name]: value }
+        setForm(tmpForm)
     }
-    return(
-        <div className='Checkout'>
-            <form>
 
+    useEffect(() => {
+        if (orderNo) {
+            setParrafo(`Tu orden es la número ${orderNo}`)
+        }
+    }, [orderNo]);
+
+    return(
+    <div className='Checkout'>
+        <h1>Finalizando compra</h1>
+        <form onSubmit={onSubmit}>
+            <label for="nombre">Nombre</label>
+                <input type="text"
+                       name='nombre'
+                       id='nombre'
+                       placeholder='Nombre'
+                       value={form.nombre}
+                       onChange={(evt) => onChange(evt)} 
+                       />
+            
+            <label for="email">E-mail</label>
+                <input type="text"
+                       name='email'
+                       id='email'
+                       placeholder='E-mail'
+                       value={form.email}
+                       onChange={(evt) => onChange(evt)} />
+            <label for="telefono">Teléfono</label>
+                <input type="text"
+                       name='telefono'
+                       id='telefono'
+                       placeholder='Teléfono'
+                       value={form.telefono}
+                       onChange={(evt) => onChange(evt)} />
+
+                <button type='submit'>Finalizar compra</button>
             </form>
-        </div>
+            <p>{parrafo}</p>
+    </div>
     )
 }
 

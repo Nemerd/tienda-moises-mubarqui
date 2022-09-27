@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Item.css';
 
-function Item({id, nombre, precio, stock}) {
+function Item({ id, nombre, precio, stock }) {
     return (
         <div className='Item' key={id}>
             <p>{id}</p>

@@ -22,22 +22,24 @@ function CartContextProvider(props) {
             cart.forEach( (i) => {tempQtty = tempQtty + i.quantity} )
             setTotalQuantity(tempQtty)
         }
+        function updateCash(){
+            let tempCash = 0;
+            cart.forEach( (i) => {tempCash = tempCash + i.precio} )
+            setTotalCash(tempCash)
+        }
 
+        updateCash()
         updateQtty()
     }, [cart]);
     
     function checkDuplicates(params) {
-        console.log("Llega el parámetro: ")
-        console.log(params)
         // Si el elemento que se pasó existe en el carrito, agregá la nueva cantidad.
         let exists = cart.find( (item) => item.id === params.id )
         if (exists){
-            console.log("Duplicado")
             const duplicateElementIndex = cart.findIndex((i) => i.id === params.id);
             cart[duplicateElementIndex].quantity += params.quantity;
             setCart([...cart]);
         } else {
-            console.log("Primero")
             setCart([...cart, params]);
         }
     }
@@ -56,6 +58,7 @@ function CartContextProvider(props) {
     }
 
     const [totalQuantity, setTotalQuantity] = useState(0);
+    const [totalCash, setTotalCash] = useState(0);
 
     return (
         <>
@@ -65,6 +68,7 @@ function CartContextProvider(props) {
                     addToCart,
                     removeFromCart,
                     totalQuantity,
+                    totalCash,
                     cart
                     }}>
                 {props.children}

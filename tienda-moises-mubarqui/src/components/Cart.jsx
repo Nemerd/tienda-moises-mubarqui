@@ -9,7 +9,7 @@ function Cart(params) {
     return(
         <div className="Cart">
             <div className="cards">
-                {cart.map( (i) => {return <div className="card">
+                {cart.map( (i) => {return <div className="card" key={i.id}>
                                      <img src={i.imagen} 
                                          alt={i.nombre + " banner"} />
                                      <p>Película: {i.nombre}</p>
