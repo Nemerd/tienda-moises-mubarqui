@@ -16,6 +16,7 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+    align-items: center;
     padding: 1em;
     border: 0.25em dashed black;
 }
@@ -26,7 +27,7 @@
 
 .card img{
     max-width: auto;
-    max-height: 10vh;
+    max-height: 7rem;
 }
 
 .BuyTickets{
@@ -46,4 +47,5 @@
     border-radius: 20%;
     background-color: red;
     background: radial-gradient(red, 85%, pink );
+    height: 3rem;
 }

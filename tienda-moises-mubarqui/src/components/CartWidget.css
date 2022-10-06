@@ -1,24 +1,16 @@
 .CartWidget{
-    display: flex;
     background-color: #BBCBCB;
-    flex-flow: row;
-    align-items: center;
-}
-
-.CartWidget button{
     display: flex;
     flex-flow: row;
     align-items: center;
+    height: 3vh;
+    border: 0.3em solid #BBCBCB
 }
 
-.CartWidget button p{
+.CartWidget p{
     margin: 0rem 1rem 0rem 1rem;
 }
 
-.CartWidget a{
-    margin: auto 1rem;
-    overflow: auto;
-}
-.CartWidget a:visited{
-    color: #0000ee;
+.CartWidget:hover{
+    border: 0.3em dashed #634b66;
 }

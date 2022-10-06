@@ -1,7 +1,6 @@
 .ItemCount{
     grid-area: count;
     display: grid;
-    /* flex-flow: row; */
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
@@ -13,6 +12,8 @@
 .ItemCount button{
     background-color: #9590A8;
     color: white;
+    border: 0.1rem solid black;
+    margin: 0.1rem;
 }
 
 .ItemCount p{

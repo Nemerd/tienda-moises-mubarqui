@@ -5,7 +5,6 @@
                          "picture price"
                          "picture count";
     grid-template-columns: 50vw 50vw;
-    background-color: #9590a8;
     height: 100%;
 }
 
@@ -13,7 +12,7 @@
     grid-area: picture;
     justify-self: center;
     max-width: 50vw;
-    max-height: 80vh;
+    height: auto;
     border: 1em dashed #18020c;
 }
 .title{

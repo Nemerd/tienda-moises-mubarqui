@@ -5,11 +5,22 @@ nav{
     height: 5vh;
 }
 
+.home{
+    display: flex;
+    align-items: center;
+}
+
 svg{
     height: 1rem;
+    margin-right: 10%;
 }
 
 button{
     border: 0;
     background: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }
