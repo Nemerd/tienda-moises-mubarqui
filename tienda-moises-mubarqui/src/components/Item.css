@@ -15,6 +15,12 @@
     text-decoration: none;
 }
 
+.Item:hover {
+    z-index: 1;
+    transition: transform 0.5s;
+    transform: scale(1.1, 1.1);
+  }
+
 .Item img{
     height: 25vh;
     width: auto;
