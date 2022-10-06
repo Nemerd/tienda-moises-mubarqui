@@ -11,6 +11,7 @@ function ItemList({items, ids}) {
                       nombre={i.nombre}
                       precio={i.precio}
                       stock={i.stock}
+                      imagen={i.imagen}
                       key={index} />}
                       )}
         </div>)

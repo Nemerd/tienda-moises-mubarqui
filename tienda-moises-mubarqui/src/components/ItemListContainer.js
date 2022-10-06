@@ -9,9 +9,9 @@ import { useEffect, useState } from "react";
 function ItemListContainer() {
 
     const { id } = useParams();
-    console.log("Categoria: " + id)
-    const [catalog, setCatalog] = useState([]);
-    const [IDS, setIDS] = useState([]);
+    const [ catalog, setCatalog ] = useState([]);
+    const [ IDS, setIDS ] = useState([]);
+    
     useEffect(() => {
         async function consultar() {
             const [productos, IDs] = await getCatalog()
