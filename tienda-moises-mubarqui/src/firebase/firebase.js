@@ -1,15 +1,8 @@
-// import "dotenv/config";
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 import { collection, doc, getDoc, getDocs, addDoc, getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-	apiKey: "AIzaSyA9Nd8VASNtP15y4POwyz-C94VTPNPHu8o",
+	apiKey: process.env.API_KEY,
 	authDomain: "tienda-moises-mubarqui.firebaseapp.com",
 	projectId: "tienda-moises-mubarqui",
 	storageBucket: "tienda-moises-mubarqui.appspot.com",
@@ -18,9 +11,7 @@ const firebaseConfig = {
 	measurementId: "G-60BLY67ZK0"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 const db = getFirestore(app)
 
 async function getCatalog() {
