@@ -5,12 +5,17 @@ import { CartContext } from "../context/CartContext";
 
 function ItemDetail({peli, id}) {
 
-    const {nombre, precio, descripcion, imagen, stock} = peli
-    const {addToCart} = useContext(CartContext);
-    const [ocultar, setOcultar] = useState(false);
+    const { nombre, precio, descripcion, imagen, stock } = peli
+    const { addToCart } = useContext(CartContext);
+    const [ ocultar, setOcultar ] = useState(false);
 
     const onAddToCart = (param) => {
-        addToCart({id: id, quantity: param, nombre: nombre, precio: precio, imagen: imagen });
+        addToCart({id: id,
+                   quantity: param,
+                   nombre: nombre,
+                   precio: precio,
+                   imagen: imagen,
+                   stock: stock});
         setOcultar(true);
     }
 

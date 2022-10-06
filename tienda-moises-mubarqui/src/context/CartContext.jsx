@@ -32,22 +32,21 @@ function CartContextProvider(props) {
         updateQtty()
     }, [cart]);
     
-    function checkDuplicates(params) {
+    //-------------Agregar lo que haya debajo de esta línea---------------------
+    
+    function addToCart(params) {
         // Si el elemento que se pasó existe en el carrito, agregá la nueva cantidad.
         let exists = cart.find( (item) => item.id === params.id )
         if (exists){
             const duplicateElementIndex = cart.findIndex((i) => i.id === params.id);
-            cart[duplicateElementIndex].quantity += params.quantity;
-            setCart([...cart]);
+            if (cart[duplicateElementIndex].quantity + params.quantity <= cart[duplicateElementIndex].stock){
+                console.log(cart[duplicateElementIndex].quantity + params.quantity >= cart[duplicateElementIndex].stock)
+                cart[duplicateElementIndex].quantity += params.quantity
+                setCart([...cart]);
+            } else { console.log("Muy ambicioso. ヽ(ಠ_ಠ)ノ\nNo se agregó.")}
         } else {
             setCart([...cart, params]);
         }
-    }
-    
-    //-------------Agregar lo que haya debajo de esta línea---------------------
-    
-    function addToCart(params) {
-        checkDuplicates(params);
     }
 
     function removeFromCart(params) {
