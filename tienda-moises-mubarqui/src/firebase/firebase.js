@@ -1,5 +1,7 @@
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { collection, doc, getDoc, getDocs, addDoc, getFirestore } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, addDoc, setDoc, updateDoc, getFirestore } from "firebase/firestore";
+import mock from "../mock/Items-mockup.json"
 
 const firebaseConfig = {
 	apiKey: process.env.API_KEY,
@@ -29,12 +31,29 @@ async function getProduct(id) {
 	// Listo para entregar NO TOCAR MÁS	
 }
 
-async function setOrder(setThis){
+async function addOrder(setThis){
 	const col = collection(db, "Películas")
 	const newDocId = await addDoc(col, setThis)
 	return newDocId.id
 	// Listo para entregar NO TOCAR MÁS
 }
 
+function resetSimulation() {
+	mock.forEach(
+		async (item) => {
+			await setDoc(doc(db, "Películas", item.id), item)
+			console.log(item.nombre + " reseteado")
+		}
+	)
+	// Listo para entregar NO TOCAR MÁS
+}
 
-export { db, app, getCatalog, getProduct, setOrder }
+async function modifyStock(item, quantity){
+	const movie = doc(db, "Películas", item.id)
+	const { stock } = await getProduct(item.id)
+	await updateDoc(movie, { stock: stock - quantity})
+	// Listo para entregar NO TOCAR MÁS
+}
+
+
+export { db, app, getCatalog, getProduct, addOrder, resetSimulation, modifyStock }

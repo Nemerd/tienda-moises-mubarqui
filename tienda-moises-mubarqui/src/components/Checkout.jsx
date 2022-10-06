@@ -1,7 +1,7 @@
 import './Checkout.css';
 import { useState, useContext, useEffect } from "react";
 import { CartContext } from '../context/CartContext';
-import { setOrder } from "../firebase/firebase";
+import { addOrder, resetSimulation, modifyStock } from "../firebase/firebase";
 
 function Checkout(props) {
 
@@ -16,7 +16,14 @@ function Checkout(props) {
         evt.preventDefault();
         const dia = new Date()
         const data = { form, cart, dia, totalCash }
-        setOrderNo( await setOrder(data))
+        setOrderNo(await addOrder(data))
+        cart.forEach(
+            (item) => {
+
+                modifyStock(item, item.quantity)
+            }
+        )
+
     }
 
     function onChange(evt){
@@ -63,6 +70,7 @@ function Checkout(props) {
                 <button type='submit'>Finalizar compra</button>
             </form>
             <p>{parrafo}</p>
+            <button onClick={resetSimulation} className="resetter">Resetear stocks</button>
     </div>
     )
 }

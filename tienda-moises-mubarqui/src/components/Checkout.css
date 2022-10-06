@@ -1,6 +1,7 @@
 .Checkout{
     background-color: #BBCBCB;
     height: 95vh;
+    position: relative;
 }
 .Checkout h1{
     margin: 0 0 1em 0;
@@ -21,4 +22,11 @@
     background: radial-gradient(#18020C, 65%, #634B66);
     height: 10vh;
     width: 10em;
+}
+
+.resetter{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
