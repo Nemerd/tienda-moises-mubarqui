@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
 import { collection, doc, getDoc, getDocs, addDoc, setDoc, updateDoc, getFirestore } from "firebase/firestore";
 import mock from "../mock/Items-mockup.json"

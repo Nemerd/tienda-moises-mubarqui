@@ -1,14 +1,10 @@
-// import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import './ItemListContainer.css';
-// import mock from "../mock/Items-mockup.json"
-import { useParams } from 'react-router-dom';
 import { getCatalog } from '../firebase/firebase';
 import { useEffect, useState } from "react";
 
 function ItemListContainer() {
 
-    const { id } = useParams();
     const [ catalog, setCatalog ] = useState([]);
     const [ IDS, setIDS ] = useState([]);
     
