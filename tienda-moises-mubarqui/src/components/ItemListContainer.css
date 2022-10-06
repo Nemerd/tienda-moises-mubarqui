@@ -1,7 +1,4 @@
 .ItemListContainer{
-    display: flex;
     background-color: #BBCBCB;
-    height: 95vh;
-    align-content: center;
-    justify-content: center;
+    min-height: 95vh;
 }
